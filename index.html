@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitPace - Endurance & Fitness Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="navbar">
+      <div class="brand">
+        <span class="logo">⚡</span>
+        <h1>FitPace Command Center</h1>
+      </div>
+      <span class="badge">Runner ID: 167064</span>
+    </header>
+
+    <main class="content">
+      <!-- Summary Cards -->
+      <section class="summary-cards">
+        <div class="card">
+          <h3>Total Distance</h3>
+          <p><span id="total-distance">0.0</span> <small>km</small></p>
+        </div>
+        <div class="card">
+          <h3>Workouts Logged</h3>
+          <p id="total-workouts">0</p>
+        </div>
+        <div class="card">
+          <h3>Est. Calories</h3>
+          <p><span id="total-calories">0</span> <small>kcal</small></p>
+        </div>
+      </section>
+
+      <!-- Entry Form -->
+      <section class="form-section">
+        <h2>Log Activity Session</h2>
+        <form id="workout-form">
+          <div class="form-group">
+            <input type="text" id="workout-title" placeholder="Session Title (e.g. Morning 5k Run)" required>
+          </div>
+          <div class="form-group">
+            <select id="workout-type" required>
+              <option value="Running">Running </option>
+              <option value="Cycling">Cycling </option>
+              <option value="Gym">Strength / Gym </option>
+              <option value="Walking">Brisk Walk </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="number" id="workout-distance" placeholder="Distance (km)" step="0.1" min="0" required>
+          </div>
+          <div class="form-group">
+            <input type="number" id="workout-duration" placeholder="Duration (mins)" min="1" required>
+          </div>
+          <button type="submit" class="btn">Log Session</button>
+        </form>
+      </section>
+
+      <!-- Activity Table -->
+      <section class="table-section">
+        <h2>Activity Log</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Session</th>
+              <th>Type</th>
+              <th>Distance</th>
+              <th>Duration</th>
+              <th>Est. Burn</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="workout-list"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
