@@ -7,8 +7,8 @@ const totalWorkoutsEl = document.getElementById("total-workouts");
 const totalCaloriesEl = document.getElementById("total-calories");
 
 // Estimate calories burned based on type and duration
-function calculateCalories(type, durationMins, distanceKm) {
-  let burnRate = 8; // calories per minute default
+function calculateCalories(type, durationMins, distanceKm, intensity=1.0) {
+  let burnRate = 8 * intensity; // calories per minute default
   if (type === "Running") burnRate = 11.5;
   if (type === "Cycling") burnRate = 9.0;
   if (type === "Gym") burnRate = 6.5;
