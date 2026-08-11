@@ -7,6 +7,7 @@ const totalWorkoutsEl = document.getElementById("total-workouts");
 const totalCaloriesEl = document.getElementById("total-calories");
 
 // Estimate calories burned based on type and duration
+//input validation checked, all numbers are positive
 function calculateCalories(type, durationMins, distanceKm) {
   let burnRate = 11; // calories per minute default
   if (type === "Running") burnRate = 11.5;
