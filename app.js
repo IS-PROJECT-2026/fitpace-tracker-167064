@@ -13,7 +13,7 @@ function calculateCalories(type, durationMins, distanceKm) {
   if (type === "Cycling") burnRate = 9.0;
   if (type === "Gym") burnRate = 6.5;
   if (type === "Walking") burnRate = 4.5;
-  return Math.round(durationMins * burnRate);
+  return Math.floor(durationMins * burnRate); //return floor rounding
 }
 
 function renderDashboard() {
